@@ -224,41 +224,41 @@
               <li class="nav-item">
                 <a href="./index.html" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard </p>
+                  <p>Dash </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="generos/index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Generos</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="actores/index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Actores</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="peliculas/index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Peliculas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="actores_peliculas/index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Actores-Peliculas</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="socios/index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Socios</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index3.html" class="nav-link">
+                <a href="alquileres/index.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Alquiler</p>
                 </a>
