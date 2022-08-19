@@ -1,45 +1,62 @@
 <?php include '../template/header.php' ?>
+<?php include '../../model/conectar.php'?>
 
 <section class="content">
-
-    <div class="container p-3">
-    <h2>Actualizar Película</h2>
+ 
+    <div class="container p-5 "  >
+        <h2> Pelicula </h2>
+  
         <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-12">
-                <label for="inputNombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="pel_nombre" name="pel_nombre" placeholder="Ingrese el nombre de la película" required>
-                <div class="valid-feedback">
-                    Válido!
+            <div class="col-md-8 success">
+                <label for="inputNombre" class="form-label text-success"></label>
+                <div class="input-group mb-3 ">
+                <span class="input-group-text text-white  "  id="pel_nombre"  style="background-color:#338b85;">Nombre</span>
+                <input type="text" class="form-control" placeholder="ingresar nombre" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </div>
             
-            <div class="col-md-6">
-                <label for="inputEmail" class="form-label">Costo</label>
+            <div class="col-md-8 success">
+                <label for="inputEmail" class="form-label text-success"></label>
 
-                <input type="number" class="form-control" id="pel_costo" name="pel_costo" placeholder="Ingrese una cantidad numérica" required>
-                <div id="inputEmail" class="invalid-feedback">
-                    Ingrese una cantidad numérica.
+                <div class="input-group mb-3">
+                    <span class="input-group-text text-white" id="pel_costo" style="background-color:#338b85;">Costo</span>
+                    <input type="text" class="form-control" placeholder="ingrese cedula" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+            </div>
+            <div class="col-md-8 success">
+                <label for="inputDireccion" class="form-label text-success"></label>
+                
+                <div class="input-group mb-3">
+                <span class="input-group-text text-white" id="pel_fecha_estreno" style="background-color:#338b85;">Fecha estreno</span>
+                <input type="text" class="form-control" placeholder="ingrese direccion" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
+                    
+               
             </div>
-            <div class="col-md-6">
-                <label for="inputDireccion" class="form-label">Fecha de estreno</label>
-                <input type="date" class="form-control " id="pel_fecha_estreno" name="pel_fecha_estreno" placeholder="Ingrese una fecha" required>
-                <div  class="invalid-feedback">
-                    Ingrese una fecha.
-                </div>
-            </div>
+           
+             
             
+            <div class="container">
+                    <div class="row">
+                         <div class="col-md-6"></div>
+                         <div class="col-md-3 offset-md-3">
+                         <button class="btn btn-success" type="submit"><img src="../../img/registro.png." ></button>
+                        </div>
+             </div>
             
-            <div class="col-12">
-            <button class="btn btn-primary" type="submit"><img src="../../img/update.png" alt="" width="30" height="30" >Grabar</button>
-            </div>
+        
         </form>
     </div>
+
 </section>
 <script>
+
         (function () {
             'use strict'
+
+            
             var forms = document.querySelectorAll('.needs-validation')
+
             Array.prototype.slice.call(forms)
                 .forEach(function (form) {
                     form.addEventListener('submit', function (event) {
@@ -54,3 +71,8 @@
         })()
     </script>
 <?php include '../template/footer.php' ?>
+
+
+
+
+

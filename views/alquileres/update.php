@@ -1,85 +1,58 @@
 <?php include '../template/header.php' ?>
 
 <section class="content">
-
-    <div class="container p-3">
-        <h2>Actualizar Alquiler</h2>
+ 
+    <div class="container p-5  "  >
+        <h2> Genero </h2>
+  
         <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-6">
-                <label for="pel_input" class="form-label">Película</label>
-                <select class="form-select" id="pel_id" name="pel_id" required>
-                    <option selected disabled value="">Elija una película</option>
-                    <option>...</option>
-                </select>
-                <div class="invalid-feedback">
-                    Seleccione una película.
+            <div class="col-md-8 success">
+                <label for="inputNombre" class="form-label text-success"></label>
+                <div class="input-group mb-3 ">
+                <span class="input-group-text text-white  "  id="soc_nombre"  style="background-color:#338b85;"> Nombre</span>
+                <input type="text" class="form-control" placeholder="ingresar nombre" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </div>
-            <div class="col-md-6">
-                <label for="soc_input" class="form-label">Socio</label>
-                <select class="form-select" id="soc_id" name="soc_id" required>
-                    <option selected disabled value="">Elija una película</option>
-                    <option>...</option>
-                </select>
-                <div class="invalid-feedback">
-                    Seleccione un socio.
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="fecha_desde" class="form-label">Desde</label>
-                <input type="date" class="form-control " id="alq_fecha_desde" name="alq_fecha_desde" placeholder="Ingrese una fecha" required>
-                <div  class="invalid-feedback">
-                    Ingrese una fecha.
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="fecha_hasta" class="form-label">Hasta</label>
-                <input type="date" class="form-control " id="alq_fecha_hasta" name="alq_fecha_hasta" placeholder="Ingrese una fecha" required>
-                <div  class="invalid-feedback">
-                    Ingrese una fecha.
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="input_valor" class="form-label">Valor</label>
-                <input type="number" class="form-control" id="alq_valor" name="alq_valor"
-                    placeholder="Ingrese una cantidad numérica" required>
-                <div id="inputEmail" class="invalid-feedback">
-                    Ingrese una cantidad numérica.
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="fecha_entrega" class="form-label">Entrega</label>
-                <input type="date" class="form-control " id="alq_fecha_entrega" name="alq_fecha_entrega"
-                    placeholder="Ingrese una fecha" required>
-                <div class="invalid-feedback">
-                    Ingrese una fecha.
-                </div>
-            </div>
-
-            <div class="col-12">
-            <button class="btn btn-primary" type="submit"><img src="../../img/update.png" alt="" width="30" height="30" >Grabar</button>
-            </div>
+            
+             
+            
+            <div class="container">
+                    <div class="row">
+                         <div class="col-md-6"></div>
+                         <div class="col-md-3 offset-md-3">
+                         <button class="btn btn-success" type="submit"><img src="../../img/salvar.png" ></button>
+                        </div>
+             </div>
+            
+        
         </form>
     </div>
+
 </section>
 <script>
-(function() {
-    'use strict'
 
+        (function () {
+            'use strict'
 
-    var forms = document.querySelectorAll('.needs-validation')
+            
+            var forms = document.querySelectorAll('.needs-validation')
 
-    Array.prototype.slice.call(forms)
-        .forEach(function(form) {
-            form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
 
-                form.classList.add('was-validated')
-            }, false)
-        })
-})()
-</script>
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
 <?php include '../template/footer.php' ?>
+
+
+
+
+

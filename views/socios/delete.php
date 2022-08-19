@@ -1,35 +1,37 @@
 <?php include '../template/header.php' ?>
-
+<?php include '../../model/conectar.php'?>
 <section class="content">
     <div>
-        <H3>Eliminar socio</H3>
+       
         <br><br>
         <div class="container">
-        <table class="table">
+        <?php
+        $row= $result->fetch_assoc();?>
+        <table class="table table-success table-striped">
             <thead>
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col">Datos</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
             <tr>
                     <th scope="row" id="soc_id">ID</th>
-                    <td></td>
+                    <td> <?php echo $row ['apl_id'];?></td>
                 </tr>
                 <tr>
                     <th scope="row" id="soc_nombre">Nombre</th>
                     <td></td>
                 <tr>
-                    <th scope="row" id="soc_cedula">Cedula</th>
+                    <th scope="row" id="soc_cedula">Cédula</th>
                     <td></td>
                 </tr>
                 <tr>
-                    <th scope="row" id="soc_direccion">Direccion</th>
+                    <th scope="row" id="soc_direccion">Dirección</th>
                     <td></td>
                 </tr>
                 <tr>
-                    <th scope="row" id="soc_telefono">Telefono</th>
+                    <th scope="row" id="soc_telefono">Teléfono</th>
                     <td></td>
                 </tr>
                 <tr>
@@ -38,9 +40,14 @@
                 </tr>
             </tbody>
         </table>
+
+                   
+        <button type="button" class="btn btn-danger"> <img src="../../img/lecho.png" ></button>
         </div>
-        
-        <button type="button" class="btn btn-danger"> <img src="../../img/bote-de-basura-abierto.png" width="30px" heigth="30px"> Eliminar</button>
+        <form action="" method="post">
+          <input type 
+        </form>
+      
 
     </div>
 

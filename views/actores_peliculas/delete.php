@@ -2,40 +2,47 @@
 
 <section class="content">
     <div>
-        <H3>Eliminar actor-pelicula</H3>
+       
         <br><br>
-        <div class="container">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Datos</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <div class="container p-5 ">
+        <table class="table table-success table-striped">
+            <thead>
                 <tr>
+                    <th scope="col"></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
                         <th scope="row" id="apl_id">ID</th>
-                        <td></td>
+                        <td><?php echo $row['apl_id'];?></td>
                     </tr>
                     <tr>
-                        <th scope="row" id="act_id">ID actor</th>
-                        <td></td>
+                        <th scope="row" id="act_id">Nombre actor</th>
+                        <td><?php echo $row['act_nombre'];?></td>
                     </tr>
                     <tr>
-                        <th scope="row" id="pel_id">ID pelicula</th>
-                        <td></td>
+                        <th scope="row" id="pel_id">Nombre pelicula</th>
+                        <td><?php echo $row['pel_nombre'];?></td>
                     </tr>
                     <tr>
                         <th scope="row" id="apl_papel">Papel</th>
-                        <td></td>
+                        <td><?php echo $row['apl_papel'];?></td>
                     </tr>
+                    
+            </tbody>
+        </table>
 
-                </tbody>
-            </table>
+        <div class="container">
+            <form action="../../controller/actores_peliculas/delete.php" method="post">
+                <input type="hidden" name="apl_id" value = "<?php echo $row['apl_id'];?>">
+                <input type = "submit" value = "Eliminar" class = "btn btn-danger">
+            </form>
         </div>
 
-        <button type="button" class="btn btn-danger"> <img src="../../img/bote-de-basura-abierto.png" width="30px" heigth="30px">
-            Eliminar</button>
+     </div>
+        
+      
 
     </div>
 

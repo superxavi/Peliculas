@@ -2,14 +2,14 @@
 
 <section class="content">
     <div>
-        <H3>Eliminar genero</H3>
+       
         <br><br>
-        <div class="container">
-        <table class="table">
+        <div class="container p-5 ">
+        <table class="table table-success table-striped">
             <thead>
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col">Datos</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -20,12 +20,22 @@
                 <tr>
                     <th scope="row" id="gen_nombre">Nombre</th>
                     <td></td>
-
+                <tr>
+                    
             </tbody>
         </table>
+
+        <div class="container">
+                    <div class="row">
+                         <div class="col-md-6"></div>
+                         <div class="col-md-3 offset-md-3">
+                         <button type="button" class="btn btn-danger"> <img src="../../img/lecho.png"></button>
+                        </div>
+             </div>
+
         </div>
         
-        <button type="button" class="btn btn-danger"> <img src="../../img/bote-de-basura-abierto.png" width="30px" heigth="30px"> Eliminar</button>
+      
 
     </div>
 

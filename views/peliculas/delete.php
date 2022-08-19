@@ -1,15 +1,15 @@
 <?php include '../template/header.php' ?>
-
+<?php include '../../model/conectar.php'?>
 <section class="content">
     <div>
-        <H3>Eliminar socio</H3>
+       
         <br><br>
         <div class="container">
-        <table class="table">
+        <table class="table table-success table-striped">
             <thead>
                 <tr>
                     <th scope="col"></th>
-                    <th scope="col">Datos</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody>
@@ -18,9 +18,9 @@
                     <td></td>
                 </tr>
                 <tr>
-                    <th scope="row" id="gen_id">ID genero</th>
+                    <th scope="row" id="gen_id">ID Género</th>
                     <td></td>
-                </tr>
+                <tr>
                 <tr>
                     <th scope="row" id="pel_nombre">Nombre</th>
                     <td></td>
@@ -32,12 +32,13 @@
                     <th scope="row" id="pel_fecha_estreno">Fecha de estreno</th>
                     <td></td>
                 </tr>
-
+               
             </tbody>
         </table>
+        <button type="button" class="btn btn-danger"> <img src="../../img/lecho.png" ></button>
         </div>
         
-        <button type="button" class="btn btn-danger"> <img src="../../img/bote-de-basura-abierto.png" width="30px" heigth="30px"> Eliminar</button>
+      
 
     </div>
 

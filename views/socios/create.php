@@ -1,55 +1,66 @@
 <?php include '../template/header.php' ?>
+<?php include '../../model/conectar.php'?>
 
 <section class="content">
-
-    <div class="container p-3">
-    <h2>Nuevo Socio</h2>
+ 
+    <div class="container p-5 "  >
+        <h2> Nuevo Socio </h2>
+  
         <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-12">
-                <label for="inputNombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="soc_nombre" name="soc_nombre" placeholder="Ingrese su nombre" required>
-                <div class="valid-feedback">
-                    Válido!
+            <div class="col-md-8 success">
+                <label for="inputNombre" class="form-label text-success"></label>
+                <div class="input-group mb-3 ">
+                <span class="input-group-text text-white  "  id="soc_nombre"  style="background-color:#338b85;"> Nombre</span>
+                <input type="text" class="form-control" placeholder="ingresar nombre" aria-label="Username" aria-describedby="basic-addon1">
                 </div>
             </div>
             
-            <div class="col-md-6">
-                <label for="inputEmail" class="form-label">Cédula</label>
+            <div class="col-md-8 success">
+                <label for="inputEmail" class="form-label text-success"></label>
 
-                <input type="number" class="form-control" id="soc_nombre" name="soc_nombre" placeholder="Ingrese un número de cédula." required>
-                <div id="inputEmail" class="invalid-feedback">
-                    Ingrese un número de cédula.
-                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text text-white" id="soc_cedula" style="background-color:#338b85;">Cédula</span>
+                    <input type="text" class="form-control" placeholder="ingrese cedula" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
             </div>
-            <div class="col-md-6">
-                <label for="inputDireccion" class="form-label">Dirección</label>
-                <input type="text" class="form-control " id="soc_direccion" name="soc_direccion" placeholder="Ingrese su dirección" required>
-                <div  class="invalid-feedback">
-                    Ingrese una dirección.
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="inputEmail" class="form-label">Teléfono</label>
-
-                <input type="number" class="form-control" id="soc_telefono" name="soc_telefono" placeholder="Ingrese un número telefónico." required>
-                <div id="inputEmail" class="invalid-feedback">
-                    Ingrese un número telefónico.
-                </div>
-            </div>
-            <div class="col-md-6">
-                <label for="inputDireccion" class="form-label">Correo</label>
-                <input type="email" class="form-control " id="soc_correo" name="soc_correo" placeholder="Ingrese un correo electrónico" required>
-                <div  class="invalid-feedback">
-                    Ingrese un correo electrónico.
-                </div>
-            </div>
-            
-            <div class="col-12">
+            <div class="col-md-8 success">
+                <label for="inputDireccion" class="form-label text-success"></label>
                 
-                <button class="btn btn-success" type="submit"><img src="../../img/save.png" alt="" width="32" height="32" >Grabar</button>
+                <div class="input-group mb-3">
+                <span class="input-group-text text-white" id="soc_direccion" style="background-color:#338b85;">Dirección</span>
+                <input type="text" class="form-control" placeholder="ingrese direccion" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                    
+               
             </div>
+            <div class="col-md-8 success">
+                <label for="inputEmail" class="form-label text-success"></label>
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text text-white" id="soc_telefono" style="background-color:#338b85;">Teléfono</span>
+                    <input type="text" class="form-control" placeholder="ingrese telefono" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+            </div>
+            <div class="col-md-8 success">
+                <label for="inputDireccion" class="form-label text-success"></label>
+                <div class="input-group mb-3">
+                        <span class="input-group-text text-white" id="soc_correo" style="background-color:#338b85;">@</span>
+                        <input type="text" class="form-control" placeholder="ingrese correo" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+             
+            
+            <div class="container">
+                    <div class="row">
+                         <div class="col-md-6"></div>
+                         <div class="col-md-3 offset-md-3">
+                         <button class="btn btn-success" type="submit"><img src="../../img/salvar.png" ></button>
+                        </div>
+             </div>
+            
+        
         </form>
     </div>
+
 </section>
 <script>
 
@@ -73,3 +84,8 @@
         })()
     </script>
 <?php include '../template/footer.php' ?>
+
+
+
+
+
