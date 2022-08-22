@@ -1,85 +1,58 @@
-<?php include '../template/header.php' ?>
-
-<section class="content">
-
-    <div class="container p-3">
-        <h2>Actualizar Alquiler</h2>
-        <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-6">
-                <label for="pel_input" class="form-label">Película</label>
-                <select class="form-select" id="pel_id" name="pel_id" required>
-                    <option selected disabled value="">Elija una película</option>
-                    <option>...</option>
-                </select>
-                <div class="invalid-feedback">
-                    Seleccione una película.
+<?php  include '../template/header.php'?>
+    <!-- Main content -->
+    <section class="content">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <b>Actualizar Alquileres</b>
                 </div>
             </div>
-            <div class="col-md-6">
-                <label for="soc_input" class="form-label">Socio</label>
-                <select class="form-select" id="soc_id" name="soc_id" required>
-                    <option selected disabled value="">Elija una película</option>
-                    <option>...</option>
-                </select>
-                <div class="invalid-feedback">
-                    Seleccione un socio.
+            <form>
+                <div>
+                    <label for="SocioId" class="form-label mb-3 mt-3">Socio ID</label>
+                    <select class="form-select" aria-label="Default select example" id="SocioId">
+                        <option selected>Seleccione</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                    <div id="emailHelp" class="form-text">No compartiremos sus datos personales con nadie.</div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label for="fecha_desde" class="form-label">Desde</label>
-                <input type="date" class="form-control " id="alq_fecha_desde" name="alq_fecha_desde" placeholder="Ingrese una fecha" required>
-                <div  class="invalid-feedback">
-                    Ingrese una fecha.
+                <div>
+                    <label for="PeliculaId" class="form-label mb-3 mt-3">Pelicula ID</label>
+                    <select class="form-select mb-3" aria-label="Default select example" id="PeliculaId">
+                        <option selected>Seleccione</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label for="fecha_hasta" class="form-label">Hasta</label>
-                <input type="date" class="form-control " id="alq_fecha_hasta" name="alq_fecha_hasta" placeholder="Ingrese una fecha" required>
-                <div  class="invalid-feedback">
-                    Ingrese una fecha.
+                <div class="mb-3">
+                    <label for="FechaInicio" class="form-label mb-3 mt-3">Fecha de Inicio del Alquiler</label>
+                    <br>
+                    <input type="date" id="FechaInicio" value="2022-01-12">
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label for="input_valor" class="form-label">Valor</label>
-                <input type="number" class="form-control" id="alq_valor" name="alq_valor"
-                    placeholder="Ingrese una cantidad numérica" required>
-                <div id="inputEmail" class="invalid-feedback">
-                    Ingrese una cantidad numérica.
+                <div class="mb-3">
+                    <label for="FechaFin" class="form-label mb-3 mt-3">Fecha Final del Alquiler</label>
+                    <br>
+                    <input type="date" id="FechaFin" value="2022-01-12">
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label for="fecha_entrega" class="form-label">Entrega</label>
-                <input type="date" class="form-control " id="alq_fecha_entrega" name="alq_fecha_entrega"
-                    placeholder="Ingrese una fecha" required>
-                <div class="invalid-feedback">
-                    Ingrese una fecha.
+                <div class="mb-3">
+                    <label for="valorPagar" class="form-label">Valor a Pagar</label>
+                    <input type="number" class="form-control" id="valorPagar">
                 </div>
-            </div>
-
-            <div class="col-12">
-            <br><button class="btn btn-primary" type="submit"><img src="../../img/update.png" alt="" width="30" height="30" >Grabar</button>
-            </div>
-        </form>
+                <div class="mb-3">
+                    <label for="FechaEntrega" class="form-label mb-3 mt-3">Fecha de Entrega del Alquiler</label>
+                    <br>
+                    <input type="date" id="FechaEntrega" value="2022-01-12">
+                </div>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+            </form>
+        </div>
     </div>
-</section>
-<script>
-(function() {
-    'use strict'
-
-
-    var forms = document.querySelectorAll('.needs-validation')
-
-    Array.prototype.slice.call(forms)
-        .forEach(function(form) {
-            form.addEventListener('submit', function(event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-
-                form.classList.add('was-validated')
-            }, false)
-        })
-})()
-</script>
-<?php include '../template/footer.php' ?>
+    </section>
+    <!-- /.content -->
+    <?php  include '../template/footer.php'?>
+    

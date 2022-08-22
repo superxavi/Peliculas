@@ -1,33 +1,33 @@
-<?php include '../template/header.php' ?>
-
-<section class="content">
-    <div>
-        <H3>Eliminar genero</H3>
-        <br><br>
-        <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Datos</th>
-                </tr>
-            </thead>
-            <tbody>
-            <tr>
-                    <th scope="row" id="gen_id">ID</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row" id="gen_nombre">Nombre</th>
-                    <td></td>
-
-            </tbody>
-        </table>
+<?php  include '../template/header.php'?>
+<?php  include '../../controller/generos/delete.php'?>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 mt-5">
+        <div class="card">
+            <div class="card-header">
+                <b>Eliminar Género</b>
+            </div>
         </div>
-        
-        <button type="button" class="btn btn-danger"> <img src="../../img/bote-de-basura-abierto.png" width="30px" heigth="30px"> Eliminar</button>
-
+        <form action="../../controller/generos/delete.php" method="post">
+            <?php
+                    $row = $result->fetch_assoc();
+                ?>
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label for="gen_id" class="form-label">ID</label>
+                    <input type="text" class="form-control" readonly id="gen_id" 
+                    value="<?php echo $row['gen_id']?>">
+                </div>
+                <div class="mb-3">          
+                    <label for="gen_nombre" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" readonly id="gen_nombre" 
+                    value="<?php echo $row['gen_nombre']?>">
+                </div>
+                <input type="hidden" name="gen_id" value="<?php echo $row['gen_id']?>">
+                <input type="submit" class="btn btn-danger" value="Eliminar"></input>
+        </form>
     </div>
+</div>
+</div>
 
-</section>
-<?php include '../template/footer.php' ?>
+<?php  include '../template/footer.php'?>

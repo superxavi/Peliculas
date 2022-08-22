@@ -1,88 +1,48 @@
-<?php include '../template/header.php' ?>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
-<div class='container'>
-
-<div class="container">
-<div class="container">
-  <div class="row">
-    <div class="col align-self-start">
-      <h2>Peliculas Registradas</h2>
-    </div>
-    <div class="col align-self-center">
-      
-    </div>
-    <div class="col align-self-end">
-      <button type="button" class="btn btn-success">Agregar</button>
-    </div>
-  </div>
-</div>
-</div>
-
-<br>
-<div class="d-flex justify-content-center" ></div>
-<div class="col-sm-12 bg-light p-3 border">
-
-  <div class="p-2 w-100">
-
-  
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col"># Numero</th>
-      <th scope="col">ID</th>
-      <th scope="col">ID_Genero</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Costo</th>
-      <th scope="col">Fecha de estreno</th>
-      <th scope="col">Opciones</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row"> </th>
-      <td>  </td>
-      <td>  </td>
-      <td>  </td>
-      <td>  </td>
-      <td>  </td>
-      
-      <td>
-
-      <div>
-      <div class="row row-cols-auto">
-        <div class="col">
-        <button class="border border-0 rounded-top">
-        <img src="../../img/editar.png" type="button" width="30" height="30" >
-        </button>
-        </div>
-        <div class="col">
-        <button class="border border-0 rounded-top">
-        <img src="../../img/lupa.png" type="button" width="30" height="30" >
-        </button>
-        </div>
-        <div class="col">
-        <button class="border border-0 rounded-top">
-        <img src="../../img/eliminar.png" type="button" width="30" height="30" >
-        </button>
-        </div>
+<?php  include '../template/header.php'?>
+<?php  include '../../controller/peliculas/index.php' ?>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-8 mt-5">
+        <div class="card">
+            <div class="card-header">
+                <b>Peliculas registradas</b>
+                <a href="create.php"><button type="button" class="btn btn-success"
+                        style="margin-left:450px;">Agregar</button></a>
+            </div>
+            <table class="table table-hover align-middle">
+                <thead>
+                    <tr>
+                        <th scope="col">Numero</th>
+                        <th scope="col">Genero</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Costo</th>
+                        <th scope="col">Fechas de estreno</th>
+                        <th scope="col" colspan="3">Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                            if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                                echo'<tr>';
+                                echo '<th scope="row">'.$row["pel_id"].'</th>';
+                                echo'<td>'.$row["gen_nombre"].'</td>';
+                                echo'<td>'.$row["pel_nombre"].'</td>';
+                                echo'<td>'.$row["pel_costo"].'</td>';
+                                echo'<td>'.$row["pel_fecha_estreno"].'</td>';
+                                echo'
+                                <td><button><a href="update.php?pel_id='.$row["pel_id"].'"><i class="fa fa-pen text-success"></i></a></button> 
+                                <button><a href="view.php?pel_id='.$row["pel_id"].'"><i class="fa fa-eye text-primary"></i></a></button>
+                                <button><a href="delete.php?pel_id='.$row["pel_id"].'"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a></button></td>';
+                                echo '</tr>';
+                            }
+                            } else {
+                            echo "0 results";
+                            }
+                        ?>
+                </tbody>
+            </table>
         </div>
     </div>
-
-
-      </td>
-    </tr>
-  </tbody>
-</table>
 </div>
-
-  </div>
-  
-</div>
-</div>
-</div>
-</div>
-
-<?php include '../template/footer.php' ?>
+<?php  include '../template/footer.php'?>

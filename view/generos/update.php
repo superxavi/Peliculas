@@ -1,42 +1,28 @@
-<?php include '../template/header.php' ?>
-
-<section class="content">
-
-    <div class="container p-3">
-    <h2>Nuevo Género Cinemátografico</h2>
-        <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-12">
-                <label for="inputNombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="gen_nombre" name="gen_nombre" placeholder="Ingrese el género cinematográfico" required>
-                <div class="valid-feedback">
-                    Válido!
-                </div>
-                <div id="inputEmail" class="invalid-feedback">
-                    Ingrese un género cinematográfico.
+<?php  include '../template/header.php'?>
+<?php include '../../controller/generos/update.php' ?>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <b>Actualizar Género</b>
                 </div>
             </div>
-            
-            <div class="col-12">
-            <br><button class="btn btn-primary" type="submit"><img src="../../img/update.png" alt="" width="30" height="30" >Grabar</button>
-            </div>
-        </form>
+            <?php
+                $row = $result->fetch_assoc();
+            ?>
+            <form action="../../controller/generos/update.php" method='POST'>
+            <div class="mb-3">
+                <label for="nombreSocio" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="gen_nombre"
+                value="<?php  echo $row['gen_nombre']?>" required name="gen_nombre">
+                <br>
+                <input type="hidden" name='gen_id'
+                value="<?php  echo $row['gen_id']?>">
+            <button type="submit" class="btn btn-success">Actualizar</button>
+            </form>
+        </div>
     </div>
-</section>
-<script>
-        (function () {
-            'use strict'
-            var forms = document.querySelectorAll('.needs-validation')
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
+</div>
 
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
-    </script>
-<?php include '../template/footer.php' ?>
+<?php  include '../template/footer.php'?>

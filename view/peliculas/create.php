@@ -1,56 +1,56 @@
 <?php include '../template/header.php' ?>
-
-<section class="content">
-
-    <div class="container p-3">
-    <h2>Nueva Película</h2>
-        <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-12">
-                <label for="inputNombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="pel_nombre" name="pel_nombre" placeholder="Ingrese el nombre de la película" required>
-                <div class="valid-feedback">
-                    Válido!
-                </div>
+<?php include '../../controller/peliculas/create.php'?>
+<div class="row">
+    <div class="col-3"></div>
+    <div class="col-6 mt-5">
+        <div class="card">
+            <div class="card-header">
+                <b>Registrar Pelicula</b>
             </div>
-            
-            <div class="col-md-6">
-                <label for="inputEmail" class="form-label">Costo</label>
-
-                <input type="number" class="form-control" id="pel_costo" name="pel_costo" placeholder="Ingrese una cantidad numérica" required>
-                <div id="inputEmail" class="invalid-feedback">
-                    Ingrese una cantidad numérica.
-                </div>
+        </div>
+        <form action='../../controller/peliculas/create.php' method="POST" novalidate>
+            <div class="mb-3 mt-3" >
+                <label class="form-label">Género</label>
+                <select name="gen_id" id="gen_id" class="form-control">
+                    <?php
+                        while($row = $result->fetch_assoc())
+                        {
+                            echo '<option value="'.$row['gen_id'].'">'.$row['gen_nombre'].'</option>';
+                        }
+                    ?>
+                </select>
             </div>
-            <div class="col-md-6">
-                <label for="inputDireccion" class="form-label">Fecha de estreno</label>
-                <input type="date" class="form-control " id="pel_fecha_estreno" name="pel_fecha_estreno" placeholder="Ingrese una fecha" required>
-                <div  class="invalid-feedback">
-                    Ingrese una fecha.
-                </div>
+            <div class="mb-3">
+                <label class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="pel_nombre" name="pel_nombre" required>
             </div>
-            
-            
-            <div class="col-12">
-            <br><button class="btn btn-success" type="submit"><img src="../../img/save.png" alt="" width="32" height="32" >Grabar</button>
+            <div class="mb-3">
+                <label class="form-label">Costo</label>
+                <input type="number" class="form-control" id="pel_costo" name="pel_costo" required>
             </div>
+            <div class="mb-3">
+                <label for="telefonoSocio" class="form-label">Fechas Estreno</label>
+                <input type="date" class="form-control" id="pel_fecha_estreno" name="pel_fecha_estreno" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar</button>
         </form>
     </div>
-</section>
+</div>
 <script>
-        (function () {
-            'use strict'
-            var forms = document.querySelectorAll('.needs-validation')
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault()
-                            event.stopPropagation()
-                        }
+(function() {
+    'use strict'
+    var forms = document.querySelectorAll('.needs-validation')
+    Array.prototype.slice.call(forms)
+        .forEach(function(form) {
+            form.addEventListener('submit', function(event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
 
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
-    </script>
-<?php include '../template/footer.php' ?>
+                form.classList.add('was-validated')
+            }, false)
+        })
+})()
+</script>
+<?php  include '../template/footer.php'?>

@@ -1,53 +1,62 @@
-<?php include '../template/header.php' ?>
-
-<section class="content">
-    <div>
-        <H3>Eliminar alquiler</H3>
-        <br><br>
-        <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col"></th>
-                    <th scope="col">Datos</th>
-                </tr>
-            </thead>
-            <tbody>
-            <tr>
-                    <th scope="row" id="alq_id">ID</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row" id="soc_id">ID socio</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row" id="pel_id">ID pelicula</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row" id="alq_fecha_desde">Fecha del alquiler</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row" id="alq_fecha_hasta">Fecha de vencimiento</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row" id="alq_valor">Valor</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th scope="row" id="alq_fecha_entrega">Fecha de entrega</th>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
+<?php  include '../template/header.php'?>
+<?php  include '../../controller/alquileres/delete.php'?>
+    <!-- Main content -->
+    <section class="content">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <b>Actualizar Alquileres</b>
+                </div>
+            </div>
+            <form action="../../controller/alquileres/delete.php" method="post">
+                <div>
+                <?php
+                    $row = $result->fetch_assoc();
+                ?>
+                <div class="mb-3">
+                    <label for="ID" class="form-label"> ID</label>
+                    <input type="number" class="form-control" id="ID" readonly
+                    value="<?php echo $row['alq_id']?>">
+                </div>
+                <div class="mb-3">
+                    <label for="SocioNombre" class="form-label">Socio</label>
+                    <input type="text" class="form-control" id="SocioNombre" readonly
+                    value="<?php echo $row['soc_nombre']?>">
+                </div>
+                <div id="emailHelp" class="form-text">No compartiremos sus datos personales con nadie.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="PeliculaNombre" class="form-label">Pelicula</label>
+                    <input type="text" class="form-control" id="PeliculaNombre" readonly
+                    value="<?php echo $row['pel_nombre']?>">
+                </div>
+                <div class="mb-3">
+                    <label for="valorPagar" class="form-label">Fecha de Inicio del Alquiler</label>
+                    <input type="date" class="form-control" id="valorPagar" readonly
+                    value="<?php echo $row['alq_fecha_desde']?>">
+                </div>
+                <div class="mb-3">
+                    <label for="valorPagar" class="form-label">Fecha Final del Alquiler</label>
+                    <input type="date" class="form-control" id="valorPagar" readonly
+                    value="<?php echo $row['alq_fecha_hasta']?>">
+                </div>
+                <div class="mb-3">
+                    <label for="valorPagar" class="form-label">Valor a Pagar</label>
+                    <input type="number" class="form-control" id="valorPagar" readonly
+                    value="<?php echo $row['alq_valor']?>">
+                </div>
+                <div class="mb-3">
+                    <label for="valorPagar" class="form-label">Fecha de Entrega del Alquiler</label>
+                    <input type="date" class="form-control" id="valorPagar" readonly
+                    value="<?php echo $row['alq_fecha_entrega']?>">
+                </div>
+                <input type="hidden" name="alq_id" value="<?php echo $row['alq_id']?>">
+                <input type="submit" class="btn btn-danger" value="Eliminar"></input>
+            </form>
         </div>
-        
-        <button type="button" class="btn btn-danger"> <img src="../../img/bote-de-basura-abierto.png" width="30px" heigth="30px"> Eliminar</button>
-
     </div>
-
-</section>
-<?php include '../template/footer.php' ?>
+    </section>
+    <!-- /.content -->
+    <?php  include '../template/footer.php'?>

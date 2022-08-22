@@ -1,42 +1,56 @@
-<?php include '../template/header.php' ?>
-
-<section class="content">
-
-    <div class="container p-3">
-    <h2>Actualizar Película</h2>
-        <form class="row g-3 needs-validation" novalidate>
-            <div class="col-md-12">
-                <label for="inputNombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="pel_nombre" name="pel_nombre" placeholder="Ingrese el nombre de la película" required>
-                <div class="valid-feedback">
-                    Válido!
+<?php  include '../template/header.php'?>
+<?php include '../../controller/peliculas/update.php' ?>
+    <div class="row">
+    <?php $row1 = $result1->fetch_assoc() ?>
+        <div class="col-3"></div>
+        <div class="col-6 mt-5">
+            <div class="card">
+                <div class="card-header">
+                    <b>Actualizar Pelicula</b>
                 </div>
             </div>
-            
-            <div class="col-md-6">
-                <label for="inputEmail" class="form-label">Costo</label>
 
-                <input type="number" class="form-control" id="pel_costo" name="pel_costo" placeholder="Ingrese una cantidad numérica" required>
-                <div id="inputEmail" class="invalid-feedback">
-                    Ingrese una cantidad numérica.
-                </div>
+            <form action="../../controller/peliculas/update.php" method='POST' >
+            <?php
+                $row = $result->fetch_assoc();
+            ?>
+            <select class="form-select form-control" id="gen_id" name="gen_id" required>
+                    <option selected disabled value="">Género</option>
+                    <?php
+                    if ($result->num_rows > 0){
+                        while($row = $result->fetch_assoc()) {
+                            if($row1["gen_id"]==$row["gen_id"]){
+                                echo '<option selected disable name="gen_id" value="'.$row["gen_id"].'">'.$row["gen_nombre"].'</option>';
+                            }else{
+                                echo '<option name="gen_id" value="'.$row["gen_id"].'">'.$row["gen_nombre"].'</option>';
+                            }
+                            
+                        }
+                    }
+                    ?>
+                    
+                </select>
+            <div class="mb-3">
+                <label for="pel_nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control"
+                value="<?php echo $row1["pel_nombre"]?>" required id="pel_nombre" name="pel_nombre">
             </div>
-            <div class="col-md-6">
-                <label for="inputDireccion" class="form-label">Fecha de estreno</label>
-                <input type="date" class="form-control " id="pel_fecha_estreno" name="pel_fecha_estreno" placeholder="Ingrese una fecha" required>
-                <div  class="invalid-feedback">
-                    Ingrese una fecha.
-                </div>
+            <div class="mb-3">
+                <label for="pel_costo" class="form-label">Costo</label>
+                <input type="number" class="form-control" id="pel_costo" name="pel_costo"
+                value="<?php  echo $row1['pel_costo']?>" required>
             </div>
-            
-            
-            <div class="col-12">
-            <br><button class="btn btn-primary" type="submit"><img src="../../img/update.png" alt="" width="30" height="30" >Grabar</button>
+            <div class="mb-3">
+                <label for="pel_fecha_estreno" class="form-label">Fechas Estreno</label>
+                <input type="date" class="form-control" id="pel_fecha_estreno" name="pel_fecha_estreno"
+                value="<?php  echo $row1['pel_fecha_estreno']?>" required>
             </div>
-        </form>
+            <input type="hidden" name="pel_id" value="<?php echo $row1['pel_id'];?>">
+            <button type="submit" class="btn btn-success">Actualizar</button>
+            </form>
+        </div>
     </div>
-</section>
-<script>
+    <script>
         (function () {
             'use strict'
             var forms = document.querySelectorAll('.needs-validation')
@@ -53,4 +67,4 @@
                 })
         })()
     </script>
-<?php include '../template/footer.php' ?>
+    <?php  include '../template/footer.php'?>
