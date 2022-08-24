@@ -1,4 +1,8 @@
 <?php  include '../template/header.php'?>
+
+<?php include '../../controller/alquiler/create.php'?>
+
+
     <!-- Main content -->
     <section class="content">
     <div class="row">

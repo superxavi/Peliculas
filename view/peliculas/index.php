@@ -6,13 +6,21 @@
         <div class="card">
             <div class="card-header">
                 <b>Peliculas registradas</b>
+
+                <a href="create.php"><button type="button" class="btn btn-success"
+
                 <a href="createPeliculas.php"><button type="button" class="btn btn-success"
+
                         style="margin-left:450px;">Agregar</button></a>
             </div>
             <table class="table table-hover align-middle">
                 <thead>
                     <tr>
+
+                        <th scope="col">Numero</th>
+
                         <th scope="col">Ord</th>
+
                         <th scope="col">Genero</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Costo</th>
