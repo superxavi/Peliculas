@@ -1,4 +1,5 @@
 <?php
+
     if(isset($_GET['act_id']))
     {
         include '../../model/conectar.php';
@@ -16,4 +17,5 @@
         include '../../model/desconectar.php';
         header('location: ../../view/actores/index.php');
     }
+
 ?>

@@ -1,5 +1,8 @@
 <?php  include '../template/header.php'?>
+
 <?php  include '../../controller/actores/create.php'?>
+
+
     <!-- Main content -->
     <section class="content">
     <div class="row">
@@ -10,10 +13,17 @@
                     <b>Registrar Actor</b>
                 </div>
             </div>
+
             <form action='../../controller/actores/create.php' method="POST">
             <div class="mb-3">
                 <label for="act_nombre" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="act_nombre" name="act_nombre" required>
+
+            <form>
+            <div class="mb-3">
+                <label for="act_nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="act_nombre">
+
                 <br>
             <button type="submit" class="btn btn-primary">Enviar</button>
             </form>

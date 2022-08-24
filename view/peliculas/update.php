@@ -1,7 +1,11 @@
 <?php  include '../template/header.php'?>
+
 <?php include '../../controller/peliculas/update.php' ?>
     <div class="row">
     <?php $row1 = $result1->fetch_assoc() ?>
+
+    <div class="row">
+
         <div class="col-3"></div>
         <div class="col-6 mt-5">
             <div class="card">
@@ -9,6 +13,7 @@
                     <b>Actualizar Pelicula</b>
                 </div>
             </div>
+
 
             <form action="../../controller/peliculas/update.php" method='POST' >
             <?php
@@ -46,10 +51,30 @@
                 value="<?php  echo $row1['pel_fecha_estreno']?>" required>
             </div>
             <input type="hidden" name="pel_id" value="<?php echo $row1['pel_id'];?>">
+
+            <form>
+            <div class="mb-3 mt-3">
+                <label for="cedulaSocio" class="form-label">ID Género</label>
+                <input type="number" class="form-control" id="gen_id" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="nombreSocio" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="pel_nombre">
+            </div>
+            <div class="mb-3">
+                <label for="direccionSocio" class="form-label">Costo</label>
+                <input type="number" class="form-control" id="pel_costo">
+            </div>
+            <div class="mb-3">
+                <label for="telefonoSocio" class="form-label">Fechas Estreno</label>
+                <input type="date" class="form-control" id="pel_fecha_estreno">
+            </div>
+
             <button type="submit" class="btn btn-success">Actualizar</button>
             </form>
         </div>
     </div>
+
     <script>
         (function () {
             'use strict'
@@ -67,4 +92,7 @@
                 })
         })()
     </script>
+
+    
+
     <?php  include '../template/footer.php'?>

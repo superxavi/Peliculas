@@ -1,5 +1,8 @@
 <?php  include '../template/header.php'?>
+
 <?php  include '../../controller/alquileres/delete.php'?>
+
+
     <!-- Main content -->
     <section class="content">
     <div class="row">
@@ -10,6 +13,7 @@
                     <b>Actualizar Alquileres</b>
                 </div>
             </div>
+
             <form action="../../controller/alquileres/delete.php" method="post">
                 <div>
                 <?php
@@ -24,10 +28,18 @@
                     <label for="SocioNombre" class="form-label">Socio</label>
                     <input type="text" class="form-control" id="SocioNombre" readonly
                     value="<?php echo $row['soc_nombre']?>">
+
+            <form>
+                <div>
+                <div class="mb-3">
+                    <label for="valorPagar" class="form-label">Socio ID</label>
+                    <input type="number" class="form-control" id="valorPagar" readonly>
+
                 </div>
                 <div id="emailHelp" class="form-text">No compartiremos sus datos personales con nadie.</div>
                 </div>
                 <div class="mb-3">
+
                     <label for="PeliculaNombre" class="form-label">Pelicula</label>
                     <input type="text" class="form-control" id="PeliculaNombre" readonly
                     value="<?php echo $row['pel_nombre']?>">
@@ -54,6 +66,28 @@
                 </div>
                 <input type="hidden" name="alq_id" value="<?php echo $row['alq_id']?>">
                 <input type="submit" class="btn btn-danger" value="Eliminar"></input>
+
+                    <label for="valorPagar" class="form-label">Pelicula ID</label>
+                    <input type="number" class="form-control" id="valorPagar" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="valorPagar" class="form-label">Fecha de Inicio del Alquiler</label>
+                    <input type="number" class="form-control" id="valorPagar" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="valorPagar" class="form-label">Fecha Final del Alquiler</label>
+                    <input type="number" class="form-control" id="valorPagar" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="valorPagar" class="form-label">Valor a Pagar</label>
+                    <input type="number" class="form-control" id="valorPagar" readonly>
+                </div>
+                <div class="mb-3">
+                    <label for="valorPagar" class="form-label">Fecha de Entrega del Alquiler</label>
+                    <input type="number" class="form-control" id="valorPagar" readonly>
+                </div>
+                <button type="submit" class="btn btn-danger">Eliminar</button>
+
             </form>
         </div>
     </div>

@@ -1,5 +1,8 @@
 <?php  include '../template/header.php'?>
+
 <?php  include '../../controller/socios/create.php'?>
+
+
     <!-- Main content -->
     <section class="content">
     <div class="row">
@@ -10,6 +13,7 @@
                     <b>Registrar socio</b>
                 </div>
             </div>
+
             <form action='../../controller/socios/create.php' method="POST">
             <div class="mb-3 mt-3">
                 <label for="soc_cedula" class="form-label">Cédula</label>
@@ -31,6 +35,33 @@
             <div class="mb-3">
                 <label for="soc_correo" class="form-label">Correo</label>
                 <input type="text" class="form-control" id="soc_correo" name="soc_correo" required>
+
+            <form>
+            <div class="mb-3 mt-3">
+                <label for="cedulaSocio" class="form-label">Cédula</label>
+                <input type="number" class="form-control" id="cedulaSocio" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">No compartiremos sus datos personales con nadie.</div>
+            </div>
+            <div class="mb-3">
+                <label for="nombreSocio" class="form-label">Nombre</label>
+                <input type="password" class="form-control" id="nombreSocio">
+            </div>
+            <div class="mb-3">
+                <label for="direccionSocio" class="form-label">Direccion</label>
+                <input type="password" class="form-control" id="direccionSocio">
+            </div>
+            <div class="mb-3">
+                <label for="telefonoSocio" class="form-label">Telefono</label>
+                <input type="password" class="form-control" id="telefonoSocio">
+            </div>
+            <div class="mb-3">
+                <label for="correoSocio" class="form-label">Correo</label>
+                <input type="password" class="form-control" id="correoSocio">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Informarme por correo</label>
+
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
             </form>

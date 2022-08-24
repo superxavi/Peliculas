@@ -1,5 +1,8 @@
 <?php  include '../template/header.php'?>
+
 <?php include '../../controller/actores/update.php' ?>
+
+
     <!-- Main content -->
     <section class="content">
     <div class="row">
@@ -10,6 +13,7 @@
                     <b>Actualizar Actor</b>
                 </div>
             </div>
+
             <?php
                 $row = $result->fetch_assoc();
             ?>
@@ -20,6 +24,13 @@
                 value="<?php  echo $row['act_nombre']?>" required name="act_nombre">
                 <br>
                 <input type="hidden" name='act_id' value="<?php  echo $row['act_id']?>">
+
+            <form>
+            <div class="mb-3">
+                <label for="act_nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="act_nombre">
+                <br>
+
             <button type="submit" class="btn btn-success">Actualizar</button>
             </form>
         </div>
