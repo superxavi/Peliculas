@@ -1,20 +1,42 @@
-<?php  include '../template/header.php'?>
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6 mt-5">
-            <div class="card">
-                <div class="card-header">
-                    <b>Registrar Género</b>
+<?php include '../template/header.php' ?>
+
+<section class="content">
+
+    <div class="container p-3">
+    <h2>Nuevo Género Cinemátografico</h2>
+        <form class="row g-3 needs-validation" action ="../../controller/generos/create.php" method = "POST" novalidate>
+            <div class="col-md-12">
+                <label for="inputNombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="gen_nombre" name="gen_nombre" placeholder="Ingrese el género cinematográfico" required>
+                <div class="valid-feedback">
+                    Válido!
+                </div>
+                <div id="inputEmail" class="invalid-feedback">
+                    Ingrese un género cinematográfico.
                 </div>
             </div>
-            <form>
-            <div class="mb-3">
-                <label for="nombreSocio" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="gen_nombre">
-                <br>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            </form>
-        </div>
+            
+            <div class="col-12">
+            <br><button class="btn btn-success" type="submit"><i class="fa-solid fa-floppy-disk p-1"></i>Grabar</button>
+            </div>
+        </form>
     </div>
-    
-    <?php  include '../template/footer.php'?>
+</section>
+<script>
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+<?php include '../template/footer.php' ?>

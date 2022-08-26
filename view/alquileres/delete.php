@@ -1,46 +1,57 @@
-<?php  include '../template/header.php'?>
-    <!-- Main content -->
-    <section class="content">
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6 mt-5">
-            <div class="card">
-                <div class="card-header">
-                    <b>Actualizar Alquileres</b>
-                </div>
-            </div>
-            <form>
-                <div>
-                <div class="mb-3">
-                    <label for="valorPagar" class="form-label">Socio ID</label>
-                    <input type="number" class="form-control" id="valorPagar" readonly>
-                </div>
-                <div id="emailHelp" class="form-text">No compartiremos sus datos personales con nadie.</div>
-                </div>
-                <div class="mb-3">
-                    <label for="valorPagar" class="form-label">Pelicula ID</label>
-                    <input type="number" class="form-control" id="valorPagar" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="valorPagar" class="form-label">Fecha de Inicio del Alquiler</label>
-                    <input type="number" class="form-control" id="valorPagar" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="valorPagar" class="form-label">Fecha Final del Alquiler</label>
-                    <input type="number" class="form-control" id="valorPagar" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="valorPagar" class="form-label">Valor a Pagar</label>
-                    <input type="number" class="form-control" id="valorPagar" readonly>
-                </div>
-                <div class="mb-3">
-                    <label for="valorPagar" class="form-label">Fecha de Entrega del Alquiler</label>
-                    <input type="number" class="form-control" id="valorPagar" readonly>
-                </div>
-                <button type="submit" class="btn btn-danger">Eliminar</button>
-            </form>
+<?php include '../template/header.php' ?>
+<?php include '../../controller/alquileres/delete.php'?>
+<section class="content">
+    <div>
+        <H3>Eliminar alquiler</H3>
+        <br><br>
+        <div class="container">
+        <?php
+                $row = $result->fetch_assoc();
+            ?>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Datos</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                    <th scope="row" id="alq_id">ID</th>
+                    <td><?php echo $row['alq_id'];?></td>
+                </tr>
+                <tr>
+                    <th scope="row" id="soc_id">Socio</th>
+                    <td><?php echo $row['soc_nombre'];?></td>
+                </tr>
+                <tr>
+                    <th scope="row" id="pel_id">Pelicula</th>
+                    <td><?php echo $row['pel_nombre'];?></td>
+                </tr>
+                <tr>
+                    <th scope="row" id="alq_fecha_desde">Fecha del alquiler</th>
+                    <td><?php echo $row['alq_fecha_desde'];?></td>
+                </tr>
+                <tr>
+                    <th scope="row" id="alq_fecha_hasta">Fecha de vencimiento</th>
+                    <td><?php echo $row['alq_fecha_hasta'];?></td>
+                </tr>
+                <tr>
+                    <th scope="row" id="alq_valor">Valor</th>
+                    <td><?php echo $row['alq_valor'];?></td>
+                </tr>
+                <tr>
+                    <th scope="row" id="alq_fecha_entrega">Fecha de entrega</th>
+                    <td><?php echo $row['alq_fecha_entrega'];?></td>
+                </tr>
+            </tbody>
+        </table>
         </div>
+        <form action="../../controller/alquileres/delete.php" method="post">
+            <input type="hidden" name="alq_id" value="<?php echo $row['alq_id'];?>">
+            <input type="submit" value="Eliminar" class="btn btn-danger">
+        </form>
     </div>
-    </section>
-    <!-- /.content -->
-    <?php  include '../template/footer.php'?>
+
+</section>
+<?php include '../template/footer.php' ?>

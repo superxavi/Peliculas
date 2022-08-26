@@ -1,35 +1,36 @@
-<?php  include '../template/header.php'?>
-<?php  include '../../controller/actores/delete.php'?>
-    <!-- Main content -->
-    <section class="content">
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6 mt-5">
-            <div class="card">
-                <div class="card-header">
-                    <b>Eliminar Actor</b>
-                </div>
-            </div>
-            <form action="../../controller/actores/delete.php" method="post">
-                <?php
-                    $row = $result->fetch_assoc();
-                ?>
-                <div class="mb-3 mt-3">
-                    <label for="IDActor" class="form-label">Actor ID</label>
-                    <input type="number" class="form-control" readonly id="IDActor"
-                    value="<?php echo $row['act_id']?>">
-                </div>
-                <div class="mb-3">
-                    <label for="act_nombre" class="form-label">Nombre</label>
-                    <input type="text" class="form-control" readonly id="act_nombre"
-                    value="<?php echo $row['act_nombre']?>">
-                    <br>
-                </div>
-                    <input type="hidden" name="act_id" value="<?php echo $row['act_id']?>">
-                    <input type="submit" class="btn btn-danger" value="Eliminar"></input>
-            </form>
+<?php include '../template/header.php' ?>
+<?php include '../../controller/actores/delete.php'?>
+<section class="content">
+    <div>
+        <H3>Eliminar actor</H3>
+        <br><br>
+        <div class="container">
+            <?php
+                $row = $result->fetch_assoc();
+            ?>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Datos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">ID</th>
+                        <td><?php echo $row['act_id'];?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Nombre</th>
+                        <td><?php echo $row['act_nombre'];?></td>
+                    </tr>
+
+                </tbody>
+            </table>
         </div>
-    </div>
-    </section>
-    <!-- /.content -->
-    <?php  include '../template/footer.php'?>
+        <form action="../../controller/actores/delete.php" method="post">
+            <input type="hidden" name="act_id" value="<?php echo $row['act_id'];?>">
+            <input type="submit" value="Eliminar" class="btn btn-danger">
+        </form>
+</section>
+<?php include '../template/footer.php' ?>

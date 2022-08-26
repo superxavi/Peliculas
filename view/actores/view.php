@@ -1,20 +1,37 @@
-<?php  include '../template/header.php'?>
-    <!-- Main content -->
-    <section class="content">
-    <div class="row">
-        <div class="col-3"></div>
-        <div class="col-6 mt-5">
-            <p class="lead"><b>Informacion Actor</b></p>
-            <table class="table table-hover align-middle table-info">
-                    <tbody>
-                        <tr>
-                            <th scope="row">Nombre</th>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
+<?php include '../template/header.php' ?>
+<?php include '../../controller/actores/view.php'?>
+<section class="content">
+    <div>
+        <H3>Datos de actor</H3>
+        <br><br>
+        <div class="container">
+        <?php
+                $row = $result->fetch_assoc();
+            ?>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Datos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                        <th scope="row" id="act_id">ID</th>
+                        <td><?php echo $row['act_id'];?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" id="act_nombre">Nombre</th>
+                        <td><?php echo $row['act_nombre'];?></td>
+                    </tr>
+
+                </tbody>
+        </table>
         </div>
+        <form action="../../controller/actores/view.php" method="post">
+            <input type="hidden" name="act_id" value="<?php echo $row['act_id'];?>">
+        </form>
     </div>
-    </section>
-    <!-- /.content -->
-    <?php  include '../template/footer.php'?>
+
+</section>
+<?php include '../template/footer.php' ?>

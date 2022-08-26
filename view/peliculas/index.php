@@ -1,48 +1,77 @@
-<?php  include '../template/header.php'?>
-<?php  include '../../controller/peliculas/index.php' ?>
-<div class="row">
-    <div class="col-1"></div>
-    <div class="col-8 mt-5">
-        <div class="card">
-            <div class="card-header">
-                <b>Peliculas registradas</b>
-                <a href="createPeliculas.php"><button type="button" class="btn btn-success"
-                        style="margin-left:450px;">Agregar</button></a>
+<?php include '../template/header.php' ?>
+
+<?php include '../../controller/peliculas/index.php' ?>
+<section class="content">
+
+            <div class="row">
+                <div class="col align-self-start">
+                    <h2>Películas Registradas</h2>
+                </div>
+                <div class="col align-self-center">
+
+                </div>
+                <div class="col align-self-end">
+                <a href="create.php"><button type="button" class="btn btn-success">Agregar</button></a>
+                </div>
             </div>
-            <table class="table table-hover align-middle">
+
+    <br>
+    <div class="d-flex justify-content-center"></div>
+    <div class="col-sm-9 bg-light p-3 border">
+
+        <div class="p-2 w-100">
+
+
+            <table class="table " >
                 <thead>
                     <tr>
-                        <th scope="col">Ord</th>
+                        <th scope="col">ID</th>
                         <th scope="col">Genero</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Costo</th>
-                        <th scope="col">Fechas de estreno</th>
-                        <th scope="col" colspan="3">Opciones</th>
+                        <th scope="col">Estreno</th>
+                        <th scope="col" >Opciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php
-                            if ($result->num_rows > 0) {
-                            while($row = $result->fetch_assoc()) {
-                                echo'<tr>';
-                                echo '<th scope="row">'.$row["pel_id"].'</th>';
-                                echo'<td>'.$row["gen_nombre"].'</td>';
-                                echo'<td>'.$row["pel_nombre"].'</td>';
-                                echo'<td>'.$row["pel_costo"].'</td>';
-                                echo'<td>'.$row["pel_fecha_estreno"].'</td>';
-                                echo'
-                                <td><button><a href="update.php?pel_id='.$row["pel_id"].'"><i class="fa fa-pen text-success"></i></a></button> 
-                                <button><a href="view.php?pel_id='.$row["pel_id"].'"><i class="fa fa-eye text-primary"></i></a></button>
-                                <button><a href="delete.php?pel_id='.$row["pel_id"].'"><i class="fa fa-trash text-danger" aria-hidden="true"></i></a></button></td>';
-                                echo '</tr>';
-                            }
-                            } else {
-                            echo "0 results";
-                            }
-                        ?>
+                  <?php
+                  //Proceso de creacion de tabla y relleno de datos de la BDD
+                    if ($result->num_rows > 0) {
+                      // output data of each row
+                      while($row = $result->fetch_assoc()) {
+                        echo '<tr>';
+                        echo '<th scope="row">'.$row["pel_id"].'</th>';
+                        echo '<th scope="row">'.$row["gen_nombre"].'</th>';
+                        echo '<th scope="row">'.$row["pel_nombre"].'</th>';
+                        echo '<th scope="row">'.$row["pel_costo"].'</th>';
+                        echo '<th scope="row">'.$row["pel_fecha_estreno"].'</th>';
+                        echo '<th scope="row">
+                            <a class="text-success" href="update.php?pel_id='.$row["pel_id"].'"><i class="fa-solid fa-pen"></i></a>
+                            <a href="view.php?pel_id='.$row["pel_id"].' "><i class="fa-solid fa-search"></i></a>
+                            <a class="text-danger" href="delete.php?pel_id='.$row["pel_id"].'"><i class="fa-solid fa-trash-can"></i></a>
+                            </th>';
+                      }
+                    } else {
+                      echo "0 results";
+                    }
+                  ?>
+                    <tr>
+                        
+                        <td> </td>
+                        <td> </td>
+
+                        <td>
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
+
     </div>
-</div>
-<?php  include '../template/footer.php'?>
+
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://kit.fontawesome.com/94ae563b14.js" crossorigin="anonymous"></script>
+<?php include '../template/footer.php' ?>

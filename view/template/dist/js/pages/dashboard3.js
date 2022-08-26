@@ -1,14 +1,14 @@
-/* global Chart:false */
+
 
 $(function () {
-  'use strict'
+
 
   var ticksStyle = {
     fontColor: '#495057',
     fontStyle: 'bold'
   }
 
-  var mode = 'index'
+
   var intersect = true
 
   var $salesChart = $('#sales-chart')
@@ -16,12 +16,12 @@ $(function () {
   var salesChart = new Chart($salesChart, {
     type: 'bar',
     data: {
-      labels: ['JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      labels: ['1', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
       datasets: [
         {
           backgroundColor: '#007bff',
           borderColor: '#007bff',
-          data: [1000, 2000, 3000, 2500, 2700, 2500, 3000]
+          data: [10, 2000, 3000, 2500, 2700, 2500, 3000]
         },
         {
           backgroundColor: '#ced4da',
@@ -143,5 +143,3 @@ $(function () {
     }
   })
 })
-
-// lgtm [js/unused-local-variable]

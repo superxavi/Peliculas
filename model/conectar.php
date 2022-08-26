@@ -2,14 +2,14 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbName = "peliculas";
+$dbname = "peliculas";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password,$dbName);
-
+$conn = new mysqli($servername, $username, $password, $dbname);
+//
 // Check connection
 if ($conn->connect_error) {
-    die("La conexión ha fallado: " . $conn->connect_error);
+    die("Conexion ha fallado: " . $conn->connect_error);
 }
-//echo "Conexión Exitosa a la Base de Datos";
+//echo "Connected successfully";
 ?>
